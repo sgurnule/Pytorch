@@ -1,0 +1,15 @@
+import torch
+
+weights= torch.tensor([2,3,1,2.],requires_grad=True)
+print(weights)
+
+for epoch in range(2):
+    model_output=(weights *2).sum()
+    model_output.backward()
+    print(weights.grad)
+    weights.grad.zero_()
+
+# optimizer=torch.optim.sgd(weights,lr=0.001)
+# optimizer.step()
+# optimizer.zero_grad()
+
